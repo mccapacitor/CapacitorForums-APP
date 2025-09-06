@@ -2,7 +2,7 @@
   "name": "capacitor-forum-app",
   "version": "1.0.1",
   "description": "Desktop app wrapper for Capacitor Forums",
-  "homepage": "https://capacitorhosting.com",
+  "homepage": "https://www.mccapacitor.org",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
