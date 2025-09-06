@@ -2,6 +2,7 @@
   "name": "capacitor-forum-app",
   "version": "1.0.1",
   "description": "Desktop app wrapper for Capacitor Forums",
+  "homepage": "https://capacitorhosting.com",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
