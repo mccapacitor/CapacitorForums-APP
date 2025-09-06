@@ -1,17 +1,64 @@
 {
   "name": "capacitor-forum-app",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Desktop app wrapper for Capacitor Forums",
   "main": "main.js",
-"scripts": {
-  "start": "electron .",
-  "build": "electron-builder"
-},
-  "keywords": [],
-  "author": "CapacitorHosting LLC",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux"
+  },
+  "keywords": [
+    "electron",
+    "forum",
+    "browser"
+  ],
+  "author": "Capacitor Hosting LLC",
   "license": "ISC",
   "devDependencies": {
     "electron": "^37.4.0",
     "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "org.mccapacitor.forum",
+    "productName": "Capacitor Forum",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*"
+    ],
+    "extraFiles": [
+      "build/LICENSE.txt"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icons/icon.png",
+      "legalTrademarks": "Capacitor Hosting LLC"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "perMachine": true,
+      "runAfterFinish": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Capacitor Forum",
+      "license": "build/LICENSE.txt",
+      "artifactName": "${productName}-Setup-${version}.${ext}"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "AppImage"
+      ],
+      "icon": "build/icons",
+      "category": "Utility",
+      "maintainer": "CapacitorHosting LLC",
+      "vendor": "CapacitorHosting LLC",
+      "description": "Desktop app wrapper for Capacitor Forums"
+    }
   }
 }
